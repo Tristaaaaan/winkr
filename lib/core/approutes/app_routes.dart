@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:winkr/features/chat/presentation/screen/chat_screen.dart';
+import 'package:winkr/features/chat/presentation/widgets/chatcontainer.dart';
 import 'package:winkr/features/home/presentation/screen/home_screen.dart';
 import 'package:winkr/features/subscribe/presentation/screen/subscribe_screen.dart';
 
@@ -17,7 +17,10 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: 'chat',
           builder: (BuildContext context, GoRouterState state) {
-            return const ChatScreen();
+            final conversationId =
+                state.uri.queryParameters['conversationId'] ?? '';
+
+            return ChatScreen(conversationId: conversationId);
           },
         ),
 
