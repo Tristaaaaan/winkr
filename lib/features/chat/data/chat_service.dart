@@ -10,7 +10,7 @@ class ChatService implements ChatRepository {
   Future<String> sendMessage(MessageModel messageModel) async {
     final docRef = await _firestore
         .collection('conversation')
-        .doc(messageModel.senderId)
+        .doc(messageModel.conversationId)
         .collection('messages')
         .add(messageModel.toMap());
 

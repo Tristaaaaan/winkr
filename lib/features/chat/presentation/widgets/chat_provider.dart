@@ -14,3 +14,15 @@ final messageStreamProvider = StreamProvider.family<List<MessageModel>, String>(
     return chatService.streamMessages(conversationId);
   },
 );
+
+final winkrThinking = StateProvider<bool>((ref) {
+  return false;
+});
+
+final chatLoading = StateProvider<bool>((ref) {
+  return false;
+});
+
+final showBiosProvider = StateProvider<bool>((ref) {
+  return false;
+});

@@ -1,20 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tugtugan/features/chat/application/send_message_use_case.dart';
-import 'package:tugtugan/features/chat/data/chat_service.dart';
-import 'package:tugtugan/features/chat/presentation/chat_provider.dart';
-import 'package:tugtugan/features/chat/presentation/widget/chatbox.dart';
-import 'package:tugtugan/features/chat/presentation/widget/chatcontainer.dart';
 
 import '../../data/chat_service.dart';
 import '../../data/send_message_use_case.dart';
 import '../widgets/chatbox.dart';
 import '../widgets/chatcontainer.dart';
 
-class ChatPage extends ConsumerWidget {
-  final String studioId;
-  const ChatPage({super.key, required this.studioId});
+class ChatScreen extends ConsumerWidget {
+  final String conversationId;
+  const ChatScreen({super.key, required this.conversationId});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,17 +16,21 @@ class ChatPage extends ConsumerWidget {
 
     final sendMessage = SendMessageUseCase(ChatService());
 
-    return Scaffold(
-      body: Column(
-        children: [
-          ChatScreen(conversationId: studioId),
-          ChatBox(
-            messageController: messageController,
-            studioId: studioId,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
 
-            sendMessage: sendMessage,
-          ),
-        ],
+      child: Scaffold(
+        appBar: AppBar(title: const Text("Winkr"), centerTitle: true),
+        body: Column(
+          children: [
+            ChatContainer(conversationId: conversationId),
+            ChatBox(
+              messageController: messageController,
+              conversationId: conversationId,
+              sendMessage: sendMessage,
+            ),
+          ],
+        ),
       ),
     );
   }

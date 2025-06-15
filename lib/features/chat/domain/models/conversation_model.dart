@@ -1,41 +1,29 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class StudioChatModel {
+class ConversationModel {
   final String? conversationId;
+  final Timestamp createdAt;
+  final String platform;
 
-  final String lastMessage;
-  final String lastMessageSenderId;
-  final Timestamp lastMessageTimeSent;
-  final String lastMessageType;
-  final String? lastMessageId;
-
-  StudioChatModel({
+  ConversationModel({
     required this.conversationId,
-    required this.lastMessage,
-    required this.lastMessageSenderId,
-    required this.lastMessageTimeSent,
-    required this.lastMessageType,
-    this.lastMessageId,
+    required this.createdAt,
+    required this.platform,
   });
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'studioId': conversationId,
-      'lastMessage': lastMessage,
-      'lastMessageSenderId': lastMessageSenderId,
-      'lastMessageTimeSent': lastMessageTimeSent,
-      'lastMessageType': lastMessageType,
-      'lastMessageId': lastMessageId,
+      'conversationId': conversationId,
+      'createdAt': createdAt,
+      'platform': platform,
     };
   }
 
-  factory StudioChatModel.fromMap(Map<String, dynamic> map) {
-    return StudioChatModel(
+  factory ConversationModel.fromMap(Map<String, dynamic> map) {
+    return ConversationModel(
       conversationId: map['conversationId'] as String,
-      lastMessage: map['lastMessage'] as String,
-      lastMessageSenderId: map['lastMessageSenderId'] as String,
-      lastMessageTimeSent: map['lastMessageTimeSent'] as Timestamp,
-      lastMessageType: map['lastMessageType'] as String,
-      lastMessageId: map['lastMessageId'] as String?,
+      createdAt: map['createdAt'] as Timestamp,
+      platform: map['platform'] as String,
     );
   }
 }

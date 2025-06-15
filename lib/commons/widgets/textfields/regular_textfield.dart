@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 class RegularTextField extends StatelessWidget {
   final TextEditingController controller;
-  final IconData icon;
+
   final bool? numbersOnly;
   final String? title;
   final String hintText;
@@ -13,7 +13,7 @@ class RegularTextField extends StatelessWidget {
   const RegularTextField({
     super.key,
     required this.controller,
-    required this.icon,
+
     this.title,
     required this.hintText,
     this.numbersOnly = false,
@@ -28,11 +28,7 @@ class RegularTextField extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (withTitle!)
-          Text(
-            title!,
-            style: const TextStyle(fontSize: 14),
-          ),
+        if (withTitle!) Text(title!, style: const TextStyle(fontSize: 14)),
         const SizedBox(height: 8),
         Container(
           decoration: BoxDecoration(
@@ -42,12 +38,7 @@ class RegularTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
-                  icon,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: TextField(
