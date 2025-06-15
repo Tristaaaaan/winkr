@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "526468152071",
+    "project_id": "winkr-c6375",
+    "storage_bucket": "winkr-c6375.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526468152071:android:36e83d557b3205be7be3a2",
+        "android_client_info": {
+          "package_name": "com.andrew.winkr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXWZ73Cu1bN1tZ2_-_hRRp99ad507osc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
