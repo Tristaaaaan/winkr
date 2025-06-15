@@ -26,6 +26,10 @@ class MainApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeNotifierProvider.notifier).currentTheme;
 
-    return MaterialApp.router(theme: theme, routerConfig: appRouter);
+    return MaterialApp.router(
+      theme: theme,
+      routerConfig: appRouter,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

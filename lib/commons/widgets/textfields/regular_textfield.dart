@@ -67,9 +67,12 @@ class RegularTextField extends StatelessWidget {
                 if (withSuffixIcon!)
                   GestureDetector(
                     onTap: () => onSuffixIconPressed?.call(),
-                    child: Icon(
-                      Icons.send,
-                      color: Theme.of(context).colorScheme.primary,
+                    child: Text(
+                      "Generate",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                   ),
               ],

@@ -21,9 +21,11 @@ class ChatContainer extends ConsumerWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(24.0),
                     child: Text(
-                      "There are no messages yet.",
+                      textAlign: TextAlign.center,
+                      "Drop a few words that describe you, and I’ll whip up a great bio!",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
+                        fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
