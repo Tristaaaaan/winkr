@@ -4,7 +4,7 @@
 
 A simple mobile prototype screen for Winkr Bio Generator. 
 
-![Your paragraph text (1)](https://github.com/user-attachments/assets/8879ad67-e0ea-45d0-9307-7b583913a2ec)
+![Your paragraph text (2)](https://github.com/user-attachments/assets/c12edab5-6ad8-4a34-8b23-fc58a32b69a2)
 
 ## Core Technologies
 
